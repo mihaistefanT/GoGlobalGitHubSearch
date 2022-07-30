@@ -15,11 +15,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.repoName }}</td>
-      <td><img style="max-width: 25%" src="{{ forecast.avatar }}"></td>
-      <td>{{ forecast.description }}</td>
-      <td><button class="btn btn-primary" (click)="bookmarkFunction()">Bookmark</button></td>
+    <tr id="{{i}}"*ngFor="let forecast of forecasts; let i = index">
+      <td id="{{i+100}}">{{ forecast.repoName }}</td>
+      <td id="{{i+200}}"><img style="max-width: 25%" src="{{ forecast.avatar }}"></td>
+      <td id="{{i+300}}">{{ forecast.description }}</td>
+      <td id="{{i+400}}"><button class="btn btn-primary" (click)="bookmarkFunction(i)">Bookmark</button></td>
     </tr>
   </tbody>
 </table>

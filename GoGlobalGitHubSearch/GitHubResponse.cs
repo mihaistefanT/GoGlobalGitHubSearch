@@ -129,4 +129,9 @@ namespace GoGlobalGitHubSearch
         public string Query { get; set; }
     }
 
+    public class GITEmail
+    {
+        public string Email { get; set; }
+    }
+
 }
