@@ -1,24 +1,25 @@
-<h1 id="tableLabel">Weather forecast</h1>
-
-<p>This component demonstrates fetching data from the server.</p>
-
-<p *ngIf="!forecasts"><em>Loading...</em></p>
+<h1 id="tableLabel">Search Results</h1>
+<div class="form-group">
+  <input #query type="text" (keyup.enter)="searchFunction(query.value)" />
+  <button class="btn btn-primary"  (click)="searchFunction(query.value)">Search</button>
+</div>
+<h2 *ngIf="!forecasts"><em>No Results</em></h2>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
+      <th>Name</th>
+      <th>Avatar</th>
+      <th>Description</th>
+      <th>BookMark</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
+      <td>{{ forecast.repoName }}</td>
+      <td><img style="max-width: 25%" src="{{ forecast.avatar }}"></td>
+      <td>{{ forecast.description }}</td>
+      <td><button class="btn btn-primary" (click)="bookmarkFunction()">Bookmark</button></td>
     </tr>
   </tbody>
 </table>
