@@ -21,6 +21,12 @@ namespace GoGlobalGitHubSearch.Controllers
             _logger = logger;
         }
 
-        
+        //here another post was needed to serve the bookmarks 
+
+        //another post was needed here to export the bookmarks to csv/xls
+
+        // the methods Export/import could have been extracted into an Inteface (IConversions let's say)
+        // after that a class what implements the cvs implimentation would have been added
+        // after that a class what implements the xls implimentation would have been added
     }
 }
